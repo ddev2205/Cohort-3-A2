@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #0b0808;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 11.5% 50% 30% 8.5%;
+    grid-template-areas: 
+        "page-header page-header page-header page-header"
+        "drink-cards drink-cards drink-cards drink-cards"
+        "special special special special"
+        "page-footer page-footer page-footer page-footer";
+}
+
+.page-header {
+    margin-top: .5%;
+    grid-area: page-header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+}
+
+.page-header img {
+    width: 15%;
+    object-fit: contain;
+}
+
+.drink-cards {
+    grid-area: drink-cards;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    margin: 0 1%;
+    gap: 1%;
+}
+
+.drink1, .drink2, .drink3, .drink4 {
+    background-color: #12100d;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.drink1 img, .drink2 img, .drink3 img, .drink4 img {
+    margin-top: -12%;
+    max-height: 50%;
+    width: auto;
+    object-fit:contain;
+}
+
+.drink1 .description, .drink2 .description, .drink3 .description, .drink4 .description {
+    font-size: 1rem;
+    color: #bdbdbd;
+}
+
+.drink1 .price, .drink2 .price, .drink3 .price, .drink4 .price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #e87914;
+}
+
+.drink1:hover, .drink2:hover, .drink3:hover, .drink4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(232, 121, 20, 0.3);
+    border: 1px solid #e87914;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.drink1 i, .drink2 i, .drink3 i, .drink4 i{
+    color: #f7831c;
+}
+
+.line {
+    width: 30%;
+    height: 0.5%;
+    border: none;
+    background-color: #e87914;
+}
+
+.tag {
+    align-self: flex-start;
+    background-color: #251c18;
+    padding: 0.4em 0.8em;
+    border-radius: 50px;
+}
+
+.tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(232, 121, 20, 0.3);
+    transition: transform 0.3s, color 0.3s;
+}
+.empty-tag {
+    height: 10%;
+
+}
+
+.special{
+    grid-area: special;
+    display: flex;
+    padding: 1%;
+    background-color: #12100d;
+    border-radius: 15px;
+    margin: 1%;
+}
+
+.special:hover {
+    box-shadow: 0 10px 20px rgba(232, 121, 20, 0.3);
+    border: #e87914 solid 1px;
+    transition:box-shadow 0.3s;
+}
+
+.special img {
+    margin-left: -0.5%;
+    align-self: flex-start;
+    max-height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.special .special-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    margin-left: 1.5%;
+}
+
+.special .special-text h4 {
+    color: #e87914;
+    font-weight: 600;
+}
+
+.special .special-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+}
+
+.special .special-text p {
+    color: #bdbdbd;
+    font-size: 0.9rem;
+}
+
+.special button {
+    background-color: transparent;
+    color: #e87914;
+    border: 1px solid #e87914;
+    padding: 0.6em 0.6em;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 0.6em;
+    width: 20%;
+    cursor: pointer;
+}
+
+.special button:hover {
+    background-color: #e87914;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.special button i {
+    margin-left: 22%;
+    font-weight: 100;
+}
+
+.page-footer {
+    grid-area: page-footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1%;
+    color: #bdbdbd;
+}
+
+.page-footer .nav{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.page-footer .nav a {
+    color: #bdbdbd;
+    text-decoration: none;
+}
+
+.page-footer .nav a:hover {
+    color: #e87914;
+    transition: color 0.3s;
+}
+
+.page-footer .nav .dot i {
+    color: #e87914;
+    font-size: 0.6rem;
+}
+
+.page-footer .socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-footer .socials a {
+    color: #e87914;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #e87914;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.page-footer .socials a:hover {
+    color: #ffffff;
+    border-color: #e87914;
+    background-color: #251c18;
+}
